@@ -1,4 +1,4 @@
-package com.monew.util.exception;
+package com.monew.global.exception;
 
 import java.time.Instant;
 import java.util.HashMap;
