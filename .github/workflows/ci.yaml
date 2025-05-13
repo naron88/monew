@@ -1,0 +1,49 @@
+name: ci
+
+on:
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  test-and-coverage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code # 현재 브랜치의 코드를 GitHub Actions 가상 머신으로 체크아웃(다운로드)
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'corretto'
+          cache: gradle
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Run tests with coverage # 단위 테스트 실행
+        run: ./gradlew test jacocoTestReport
+
+      - name: Upload JUnit Test Report
+        if: always() # 테스트가 성공하든 실패하든(always), 결과 리포트를 업로드
+        uses: actions/upload-artifact@v4
+        with:
+          name: junit-test-report
+          path: build/reports/tests/test
+
+      - name: Upload JaCoCo Coverage Report
+        if: always() # 커버리지 리포트 HTML 파일도 업로드
+        uses: actions/upload-artifact@v4
+        with:
+          name: jacoco-report
+          path: build/reports/jacoco/test/html
+
+      - name: Upload JaCoCo report to Codecov # Codecov 사이트로 커버리지 리포트 업로드
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: build/reports/jacoco/test/jacocoTestReport.xml
+          fail_ci_if_error: true
