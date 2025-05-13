@@ -18,7 +18,7 @@ public class GlobalExceptionHandler {
 
     ErrorResponse response = new ErrorResponse(e);
 
-    return ResponseEntity.status(e.getErrorCode().getHttpStatus().).body(response);
+    return ResponseEntity.status(e.getErrorCode().getHttpStatus()).body(response);
   }
 
   // request validation 예외 처리
