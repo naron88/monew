@@ -9,6 +9,8 @@ on:
 jobs:
   test-and-coverage:
     runs-on: ubuntu-latest
+    env:
+      SPRING_PROFILES_ACTIVE: test
 
     steps:
       - name: Checkout code # 현재 브랜치의 코드를 GitHub Actions 가상 머신으로 체크아웃(다운로드)
