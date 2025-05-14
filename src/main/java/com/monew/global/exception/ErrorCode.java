@@ -11,6 +11,9 @@ public enum ErrorCode {
   INVALID_USER_CREDENTIALS("USER_002", "잘못된 비밀번호입니다.", HttpStatus.UNAUTHORIZED),
   DUPLICATE_USER("USER_003", "중복된 사용자입니다.", HttpStatus.CONFLICT),
 
+  // activity 에러 코드
+  DUPLICATE_ACTIVITY("ACTIVITY_003", "중복된 활동 내역입니다.", HttpStatus.CONFLICT),
+
   // Server 에러 코드
   INTERNAL_SERVER_ERROR("SERVER_001", "서버 내부 오류가 발생했습니다.", HttpStatus.INTERNAL_SERVER_ERROR),
 
