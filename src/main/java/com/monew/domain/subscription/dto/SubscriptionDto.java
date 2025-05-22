@@ -8,7 +8,7 @@ public record SubscriptionDto(
     UUID id,
     UUID interestId,
     String interestName,
-    List<String> interestKeywords,
+    List<com.monew.domain.interest.entity.Keyword> interestKeywords,
     int interestSubscriberCount,
     Instant createdAt
 ) {

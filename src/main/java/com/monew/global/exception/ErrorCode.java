@@ -14,6 +14,10 @@ public enum ErrorCode {
   // activity 에러 코드
   DUPLICATE_ACTIVITY("ACTIVITY_003", "중복된 활동 내역입니다.", HttpStatus.CONFLICT),
 
+  // interest 에러 코드
+  INTEREST_NOT_FOUND("INTEREST_001", "관심사를 찾을 수 없습니다.", HttpStatus.NOT_FOUND),
+  DUPLICATE_INTEREST("INTEREST_003", "중복된 관심사 이름입니다.", HttpStatus.CONFLICT),
+
   // Server 에러 코드
   INTERNAL_SERVER_ERROR("SERVER_001", "서버 내부 오류가 발생했습니다.", HttpStatus.INTERNAL_SERVER_ERROR),
 

@@ -1,38 +1,38 @@
-package com.monew.domain.activity.entity;
+package com.monew.domain.notification.entity;
 
 import com.monew.domain.user.entity.User;
 import jakarta.persistence.Column;
-import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
-@Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Getter
+@Table(name = "notifications")
 @EntityListeners(AuditingEntityListener.class)
-@Table(name = "activities")
-public class Activity {
+public class Notification {
 
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
-  @Column(updatable = false, nullable = false)
   private UUID id;
 
   @CreatedDate
@@ -43,12 +43,37 @@ public class Activity {
   @Column(name = "updated_at")
   private Instant updatedAt;
 
-  @OneToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "user_id", nullable = false, unique = true)
+  @Column(name = "confirmed", nullable = false)
+  private boolean confirmed;
+
+  @Column(name = "content", nullable = false)
+  private String content;
+
+  @Enumerated(EnumType.STRING)
+  @Column(name = "resource_type", nullable = false)
+  private ResourceType resourceType;
+
+  @Column(name = "resource_id")
+  private UUID resourceId;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  @OnDelete(action = OnDeleteAction.CASCADE)
+  @JoinColumn(name = "userId", nullable = false)
   private User user;
 
-  public Activity(User user) {
-    this.id = UUID.randomUUID();
+  public Notification(String content, ResourceType resourceType, UUID resourceId, User user) {
+    this.confirmed = false;
+    this.content = content;
+    this.resourceType = resourceType;
+    this.resourceId = resourceId;
     this.user = user;
+  }
+
+  public void read() {
+    this.confirmed = true;
+  }
+
+  public enum ResourceType {
+    INTEREST, COMMENT
   }
 }

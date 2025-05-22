@@ -1,16 +1,13 @@
-package com.monew.domain.activity.entity;
+package com.monew.domain.interest.entity;
 
-import com.monew.domain.user.entity.User;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
-import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -19,36 +16,55 @@ import java.util.UUID;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.BatchSize;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
-@Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @EntityListeners(AuditingEntityListener.class)
-@Table(name = "activities")
-public class Activity {
+@Getter
+@Table(name = "interests")
+public class Interest {
 
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
-  @Column(updatable = false, nullable = false)
   private UUID id;
 
+  @Column(name = "name", nullable = false)
+  private String name;
+
+  @OneToMany(mappedBy = "interest", orphanRemoval = true, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+  @BatchSize(size = 50)
+  private List<Keyword> keywords;
+
+  @Column(name = "subscriber_count")
+  private int subscriberCount;
+
+  @Column(name = "created_at")
   @CreatedDate
-  @Column(name = "created_at", nullable = false)
   private Instant createdAt;
 
-  @LastModifiedDate
   @Column(name = "updated_at")
+  @LastModifiedDate
   private Instant updatedAt;
 
-  @OneToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "user_id", nullable = false, unique = true)
-  private User user;
+  public Interest(String name) {
+    this.name = name;
+    this.keywords= new ArrayList<>();
+  }
 
-  public Activity(User user) {
-    this.id = UUID.randomUUID();
-    this.user = user;
+  public void update(List<Keyword> keywords) {
+    this.keywords.clear();
+    this.keywords.addAll(keywords);
+  }
+
+  public void subscribe() {
+    subscriberCount++;
+  }
+
+  public void cancelSubscribe() {
+    subscriberCount--;
   }
 }
