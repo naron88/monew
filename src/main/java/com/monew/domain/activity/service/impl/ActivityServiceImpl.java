@@ -43,6 +43,9 @@ public class ActivityServiceImpl implements ActivityService {
 
   @Override
   public UserActivityDto findByUserId(UUID userId) {
+    Activity activity = activityRepository.findByUserId(userId)
+        .orElseThrow(() -> ActivityAlreadyExistsException.withUserId(userId));
+
     return null;
   }
 

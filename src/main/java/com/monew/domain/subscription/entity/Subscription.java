@@ -1,8 +1,8 @@
-package com.monew.domain.activity.entity;
+package com.monew.domain.subscription.entity;
 
+import com.monew.domain.interest.entity.Interest;
 import com.monew.domain.user.entity.User;
 import jakarta.persistence.Column;
-import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.FetchType;
@@ -10,45 +10,41 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @EntityListeners(AuditingEntityListener.class)
-@Table(name = "activities")
-public class Activity {
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Table(name = "subscriptions")
+public class Subscription {
 
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
-  @Column(updatable = false, nullable = false)
   private UUID id;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "user_id", nullable = false)
+  private User user;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "interest_id", nullable = false)
+  private Interest interest;
 
   @CreatedDate
   @Column(name = "created_at", nullable = false)
   private Instant createdAt;
 
-  @LastModifiedDate
-  @Column(name = "updated_at")
-  private Instant updatedAt;
-
-  @OneToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "user_id", nullable = false, unique = true)
-  private User user;
-
-  public Activity(User user) {
-    this.id = UUID.randomUUID();
+  public Subscription(User user, Interest interest) {
     this.user = user;
+    this.interest = interest;
   }
 }
