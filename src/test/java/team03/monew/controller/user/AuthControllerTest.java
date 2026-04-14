@@ -15,13 +15,14 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
-import team03.monew.dto.user.UserDto;
-import team03.monew.dto.user.UserLoginRequest;
-import team03.monew.entity.user.User.Role;
-import team03.monew.service.user.AuthService;
-import team03.monew.service.user.UserService;
-import team03.monew.util.exception.user.InvalidException;
-import team03.monew.util.exception.user.UserNotFoundException;
+import team03.monew.module.user.controller.AuthController;
+import team03.monew.module.user.dto.UserDto;
+import team03.monew.module.user.dto.UserLoginRequest;
+import team03.monew.module.user.entity.User.Role;
+import team03.monew.module.user.service.AuthService;
+import team03.monew.module.user.service.UserService;
+import team03.monew.module.user.exception.InvalidException;
+import team03.monew.module.user.exception.UserNotFoundException;
 
 @WebMvcTest(AuthController.class)
 class AuthControllerTest {

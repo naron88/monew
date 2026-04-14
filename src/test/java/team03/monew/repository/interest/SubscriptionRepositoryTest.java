@@ -18,11 +18,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.test.context.ActiveProfiles;
 import team03.monew.config.JpaConfig;
 import team03.monew.config.QueryDslConfig;
-import team03.monew.entity.interest.Interest;
-import team03.monew.entity.interest.Subscription;
-import team03.monew.entity.user.User;
-import team03.monew.entity.user.User.Role;
-import team03.monew.repository.interest.subscription.SubscriptionRepository;
+import team03.monew.module.interest.entity.Interest;
+import team03.monew.module.interest.subscription.entity.Subscription;
+import team03.monew.module.user.entity.User;
+import team03.monew.module.user.entity.User.Role;
+import team03.monew.module.interest.subscription.repository.SubscriptionRepository;
 
 @DataJpaTest
 @ActiveProfiles("test")

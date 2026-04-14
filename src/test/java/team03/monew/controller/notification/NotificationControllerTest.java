@@ -9,11 +9,12 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import team03.monew.dto.common.CursorPageResponse;
-import team03.monew.dto.notification.NotificationDto;
-import team03.monew.dto.notification.NotificationFindRequest;
-import team03.monew.dto.notification.ResourceType;
-import team03.monew.service.notification.NotificationService;
+import team03.monew.module.common.dto.CursorPageResponse;
+import team03.monew.module.notification.controller.NotificationController;
+import team03.monew.module.notification.dto.NotificationDto;
+import team03.monew.module.notification.dto.NotificationFindRequest;
+import team03.monew.module.notification.dto.ResourceType;
+import team03.monew.module.notification.service.NotificationService;
 
 import java.time.Instant;
 import java.util.List;

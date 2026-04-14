@@ -11,12 +11,12 @@ import java.time.Instant;
 import java.util.List;
 import java.util.UUID;
 import org.springframework.http.ResponseEntity;
-import team03.monew.dto.article.ArticleDto;
-import team03.monew.dto.article.ArticleFindRequest;
-import team03.monew.dto.article.ArticleRestoreDto;
-import team03.monew.dto.article.ArticleViewDto;
-import team03.monew.dto.common.CursorPageResponse;
-import team03.monew.util.exception.ErrorResponse;
+import team03.monew.module.activity.dto.ArticleDto;
+import team03.monew.module.activity.dto.ArticleFindRequest;
+import team03.monew.module.activity.dto.ArticleRestoreDto;
+import team03.monew.module.activity.dto.ArticleViewDto;
+import team03.monew.module.common.dto.CursorPageResponse;
+import team03.monew.module.common.exception.ErrorResponse;
 
 @Tag(name = "뉴스 기사 관리 API")
 public interface ArticleApi {

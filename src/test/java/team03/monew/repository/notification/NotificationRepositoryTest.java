@@ -16,16 +16,17 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
-import team03.monew.dto.notification.ResourceType;
-import team03.monew.entity.notification.Notification;
-import team03.monew.entity.notification.QNotification;
-import team03.monew.entity.user.User;
+import team03.monew.module.notification.dto.ResourceType;
+import team03.monew.module.notification.entity.Notification;
+import team03.monew.module.notification.entity.QNotification;
+import team03.monew.module.user.entity.User;
 
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import team03.monew.entity.user.User.Role;
+import team03.monew.module.user.entity.User.Role;
+import team03.monew.module.notification.repository.CustomNotificationRepositoryImpl;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.*;

@@ -16,8 +16,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
-import team03.monew.dto.interest.SubscriptionDto;
-import team03.monew.service.interest.SubscriptionService;
+import team03.monew.module.comments.dto.SubscriptionDto;
+import team03.monew.module.interest.subscription.controller.SubscriptionController;
+import team03.monew.module.interest.subscription.service.SubscriptionService;
 
 @WebMvcTest(SubscriptionController.class)
 public class SubscriptionControllerTest {

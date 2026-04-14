@@ -28,25 +28,26 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
 import org.springframework.test.util.ReflectionTestUtils;
-import team03.monew.dto.common.CursorPageResponse;
-import team03.monew.dto.notification.NotificationDto;
-import team03.monew.dto.notification.ResourceType;
-import team03.monew.entity.article.Article;
-import team03.monew.entity.comments.Comment;
-import team03.monew.entity.interest.Interest;
-import team03.monew.entity.interest.Subscription;
-import team03.monew.entity.notification.Notification;
-import team03.monew.entity.user.User;
-import team03.monew.entity.user.User.Role;
-import team03.monew.mapper.notification.NotificationMapper;
-import team03.monew.repository.comments.CommentRepository;
-import team03.monew.repository.interest.interest.InterestRepository;
-import team03.monew.repository.notification.NotificationRepository;
-import team03.monew.repository.interest.subscription.SubscriptionRepository;
-import team03.monew.repository.user.UserRepository;
-import team03.monew.util.exception.comments.CommentNotFoundException;
-import team03.monew.util.exception.notification.NotificationNotFoundException;
-import team03.monew.util.exception.user.UserNotFoundException;
+import team03.monew.module.common.dto.CursorPageResponse;
+import team03.monew.module.notification.dto.NotificationDto;
+import team03.monew.module.notification.dto.ResourceType;
+import team03.monew.module.article.entity.Article;
+import team03.monew.module.comments.entity.Comment;
+import team03.monew.module.interest.entity.Interest;
+import team03.monew.module.interest.subscription.entity.Subscription;
+import team03.monew.module.notification.entity.Notification;
+import team03.monew.module.user.entity.User;
+import team03.monew.module.user.entity.User.Role;
+import team03.monew.module.notification.mapper.NotificationMapper;
+import team03.monew.module.comments.repository.CommentRepository;
+import team03.monew.module.interest.repository.InterestRepository;
+import team03.monew.module.notification.repository.NotificationRepository;
+import team03.monew.module.interest.subscription.repository.SubscriptionRepository;
+import team03.monew.module.notification.service.NotificationServiceImpl;
+import team03.monew.module.user.repository.UserRepository;
+import team03.monew.module.comments.exception.CommentNotFoundException;
+import team03.monew.module.notification.exception.NotificationNotFoundException;
+import team03.monew.module.user.exception.UserNotFoundException;
 
 @ExtendWith(MockitoExtension.class)
 class NotificationServiceImplTest {

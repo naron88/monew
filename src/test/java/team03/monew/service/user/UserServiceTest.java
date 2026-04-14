@@ -18,16 +18,16 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import team03.monew.dto.user.UserDto;
-import team03.monew.dto.user.UserRegisterRequest;
-import team03.monew.dto.user.UserUpdateRequest;
-import team03.monew.entity.user.User;
-import team03.monew.entity.user.User.Role;
-import team03.monew.mapper.user.UserMapper;
-import team03.monew.repository.user.UserRepository;
-import team03.monew.service.user.impl.UserServiceImpl;
-import team03.monew.util.exception.user.UserAlreadyExistsException;
-import team03.monew.util.exception.user.UserNotFoundException;
+import team03.monew.module.user.dto.UserDto;
+import team03.monew.module.user.dto.UserRegisterRequest;
+import team03.monew.module.user.dto.UserUpdateRequest;
+import team03.monew.module.user.entity.User;
+import team03.monew.module.user.entity.User.Role;
+import team03.monew.module.user.mapper.UserMapper;
+import team03.monew.module.user.repository.UserRepository;
+import team03.monew.module.user.service.UserServiceImpl;
+import team03.monew.module.user.exception.UserAlreadyExistsException;
+import team03.monew.module.user.exception.UserNotFoundException;
 
 @ExtendWith(MockitoExtension.class)
 class UserServiceTest {
