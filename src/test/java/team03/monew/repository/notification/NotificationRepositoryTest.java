@@ -18,7 +18,7 @@ import org.springframework.data.domain.Sort;
 
 import team03.monew.module.notification.dto.ResourceType;
 import team03.monew.module.notification.entity.Notification;
-import team03.monew.entity.notification.QNotification;
+import team03.monew.module.notification.entity.QNotification;
 import team03.monew.module.user.entity.User;
 
 import java.time.Instant;
