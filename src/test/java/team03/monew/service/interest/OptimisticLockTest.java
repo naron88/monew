@@ -13,9 +13,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
-import team03.monew.dto.interest.InterestDto;
-import team03.monew.dto.interest.InterestRegisterRequest;
-import team03.monew.entity.interest.Interest;
+import team03.monew.module.comments.dto.InterestDto;
+import team03.monew.module.comments.dto.InterestRegisterRequest;
+import team03.monew.module.interest.entity.Interest;
+import team03.monew.module.interest.service.InterestReader;
+import team03.monew.module.interest.service.InterestService;
 
 @Transactional
 @SpringBootTest

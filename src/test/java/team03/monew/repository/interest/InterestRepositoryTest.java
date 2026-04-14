@@ -19,11 +19,11 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.util.ReflectionTestUtils;
 import team03.monew.config.JpaConfig;
 import team03.monew.config.QueryDslConfig;
-import team03.monew.dto.interest.InterestFindRequest;
-import team03.monew.entity.interest.Interest;
-import team03.monew.entity.interest.Keyword;
-import team03.monew.entity.user.User;
-import team03.monew.repository.interest.interest.InterestRepository;
+import team03.monew.module.comments.dto.InterestFindRequest;
+import team03.monew.module.interest.entity.Interest;
+import team03.monew.module.interest.entity.Keyword;
+import team03.monew.module.user.entity.User;
+import team03.monew.module.interest.repository.InterestRepository;
 
 @DataJpaTest
 @ActiveProfiles("test")

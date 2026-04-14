@@ -28,19 +28,21 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import team03.monew.dto.common.CursorPageResponse;
-import team03.monew.dto.interest.InterestDto;
-import team03.monew.dto.interest.InterestFindRequest;
-import team03.monew.dto.interest.InterestRegisterRequest;
-import team03.monew.dto.interest.InterestUpdateRequest;
-import team03.monew.entity.interest.Interest;
-import team03.monew.entity.interest.Keyword;
-import team03.monew.mapper.interest.InterestMapper;
-import team03.monew.repository.interest.interest.InterestRepository;
-import team03.monew.service.interest.impl.InterestServiceImpl;
-import team03.monew.util.exception.interest.EmptyKeywordListException;
-import team03.monew.util.exception.interest.ExcessiveRetryException;
-import team03.monew.util.exception.interest.InterestAlreadyExistException;
+import team03.monew.module.common.dto.CursorPageResponse;
+import team03.monew.module.comments.dto.InterestDto;
+import team03.monew.module.comments.dto.InterestFindRequest;
+import team03.monew.module.comments.dto.InterestRegisterRequest;
+import team03.monew.module.comments.dto.InterestUpdateRequest;
+import team03.monew.module.interest.entity.Interest;
+import team03.monew.module.interest.entity.Keyword;
+import team03.monew.module.interest.mapper.InterestMapper;
+import team03.monew.module.interest.repository.InterestRepository;
+import team03.monew.module.interest.service.InterestReader;
+import team03.monew.module.interest.service.InterestServiceImpl;
+import team03.monew.module.interest.subscription.service.SubscriptionService;
+import team03.monew.module.interest.exception.EmptyKeywordListException;
+import team03.monew.module.interest.exception.ExcessiveRetryException;
+import team03.monew.module.interest.exception.InterestAlreadyExistException;
 
 @ExtendWith(MockitoExtension.class)
 public class InterestServiceTest {

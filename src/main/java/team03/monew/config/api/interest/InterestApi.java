@@ -9,12 +9,12 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpSession;
 import java.util.UUID;
 import org.springframework.http.ResponseEntity;
-import team03.monew.dto.common.CursorPageResponse;
-import team03.monew.dto.interest.InterestDto;
-import team03.monew.dto.interest.InterestFindRequest;
-import team03.monew.dto.interest.InterestRegisterRequest;
-import team03.monew.dto.interest.InterestUpdateRequest;
-import team03.monew.util.exception.ErrorResponse;
+import team03.monew.module.common.dto.CursorPageResponse;
+import team03.monew.module.comments.dto.InterestDto;
+import team03.monew.module.comments.dto.InterestFindRequest;
+import team03.monew.module.comments.dto.InterestRegisterRequest;
+import team03.monew.module.comments.dto.InterestUpdateRequest;
+import team03.monew.module.common.exception.ErrorResponse;
 
 @Tag(name = "관심사 관리 API")
 public interface InterestApi {

@@ -16,8 +16,9 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.test.context.ActiveProfiles;
-import team03.monew.entity.user.User;
-import team03.monew.entity.user.User.Role;
+import team03.monew.module.user.entity.User;
+import team03.monew.module.user.entity.User.Role;
+import team03.monew.module.user.repository.UserRepository;
 
 @DataJpaTest
 @EnableJpaAuditing

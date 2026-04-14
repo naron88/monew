@@ -1,14 +1,5 @@
 package team03.monew.config;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.ApplicationRunner;
-import org.springframework.stereotype.Component;
-import team03.monew.entity.user.User;
-import team03.monew.repository.user.UserRepository;
-
 //@Slf4j
 //@Component
 //@RequiredArgsConstructor

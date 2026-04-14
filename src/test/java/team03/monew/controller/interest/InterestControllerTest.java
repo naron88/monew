@@ -19,12 +19,13 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
-import team03.monew.dto.common.CursorPageResponse;
-import team03.monew.dto.interest.InterestDto;
-import team03.monew.dto.interest.InterestFindRequest;
-import team03.monew.dto.interest.InterestRegisterRequest;
-import team03.monew.dto.interest.InterestUpdateRequest;
-import team03.monew.service.interest.InterestService;
+import team03.monew.module.common.dto.CursorPageResponse;
+import team03.monew.module.comments.dto.InterestDto;
+import team03.monew.module.comments.dto.InterestFindRequest;
+import team03.monew.module.comments.dto.InterestRegisterRequest;
+import team03.monew.module.comments.dto.InterestUpdateRequest;
+import team03.monew.module.interest.controller.InterestController;
+import team03.monew.module.interest.service.InterestService;
 
 @WebMvcTest(InterestController.class)
 public class InterestControllerTest {

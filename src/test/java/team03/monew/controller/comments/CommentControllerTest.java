@@ -19,22 +19,21 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Sort;
-import team03.monew.dto.comments.CommentCreateRequest;
-import team03.monew.dto.comments.CommentDto;
-import team03.monew.dto.comments.CommentLikeDto;
-import team03.monew.dto.comments.CommentUpdateRequest;
-import team03.monew.dto.common.CursorPageResponse;
-import team03.monew.service.comments.CommentService;
-import team03.monew.util.exception.GlobalExceptionHandler;
-import team03.monew.util.exception.comments.CommentNotFoundException;
-import team03.monew.util.exception.comments.AlreadyLikedException;
-import team03.monew.util.exception.comments.LikeNotFoundException;
+import team03.monew.module.article.dto.CommentCreateRequest;
+import team03.monew.module.article.dto.CommentDto;
+import team03.monew.module.article.dto.CommentLikeDto;
+import team03.monew.module.article.dto.CommentUpdateRequest;
+import team03.monew.module.common.dto.CursorPageResponse;
+import team03.monew.module.comments.controller.CommentController;
+import team03.monew.module.comments.service.CommentService;
+import team03.monew.module.comments.exception.CommentNotFoundException;
+import team03.monew.module.comments.exception.AlreadyLikedException;
+import team03.monew.module.comments.exception.LikeNotFoundException;
 
 @WebMvcTest(CommentController.class)
 class CommentControllerTest {

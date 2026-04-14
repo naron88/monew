@@ -8,8 +8,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.UUID;
 import org.springframework.http.ResponseEntity;
-import team03.monew.dto.interest.SubscriptionDto;
-import team03.monew.util.exception.ErrorResponse;
+import team03.monew.module.comments.dto.SubscriptionDto;
+import team03.monew.module.common.exception.ErrorResponse;
 
 @Tag(name = "관심사 구독 API")
 public interface SubscriptionApi {

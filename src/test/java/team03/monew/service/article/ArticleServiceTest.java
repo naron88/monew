@@ -19,10 +19,11 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
-import team03.monew.entity.article.Article;
-import team03.monew.mapper.article.ArticleMapper;
-import team03.monew.repository.article.ArticleRepository;
-import team03.monew.util.exception.article.ArticleNotFoundException;
+import team03.monew.module.article.entity.Article;
+import team03.monew.module.article.mapper.ArticleMapper;
+import team03.monew.module.article.repository.ArticleRepository;
+import team03.monew.module.article.service.ArticleServiceImpl;
+import team03.monew.module.article.exception.ArticleNotFoundException;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)

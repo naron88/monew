@@ -20,19 +20,20 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.context.ApplicationEventPublisher;
-import team03.monew.dto.interest.SubscriptionDto;
-import team03.monew.entity.interest.Interest;
-import team03.monew.entity.interest.Subscription;
-import team03.monew.entity.user.User;
-import team03.monew.event.subscription.SubscriptionCreateEvent;
-import team03.monew.event.subscription.SubscriptionDeleteEvent;
-import team03.monew.mapper.interest.InterestMapper;
-import team03.monew.mapper.interest.SubscriptionMapper;
-import team03.monew.repository.interest.subscription.SubscriptionRepository;
-import team03.monew.service.interest.impl.SubscriptionServiceImpl;
-import team03.monew.service.user.UserService;
-import team03.monew.util.exception.subscription.SubscriptionAlreadyExistException;
-import team03.monew.util.exception.subscription.SubscriptionNotFoundException;
+import team03.monew.module.comments.dto.SubscriptionDto;
+import team03.monew.module.interest.entity.Interest;
+import team03.monew.module.interest.subscription.entity.Subscription;
+import team03.monew.module.user.entity.User;
+import team03.monew.module.interest.subscription.event.SubscriptionCreateEvent;
+import team03.monew.module.interest.subscription.event.SubscriptionDeleteEvent;
+import team03.monew.module.interest.mapper.InterestMapper;
+import team03.monew.module.interest.mapper.SubscriptionMapper;
+import team03.monew.module.interest.service.InterestReader;
+import team03.monew.module.interest.subscription.repository.SubscriptionRepository;
+import team03.monew.module.interest.subscription.service.SubscriptionServiceImpl;
+import team03.monew.module.user.service.UserService;
+import team03.monew.module.interest.subscription.exception.SubscriptionAlreadyExistException;
+import team03.monew.module.interest.subscription.exception.SubscriptionNotFoundException;
 
 @ExtendWith(MockitoExtension.class)
 public class SubscriptionServiceTest {

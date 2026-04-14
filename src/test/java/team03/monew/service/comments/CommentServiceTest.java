@@ -11,7 +11,6 @@ import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-import java.util.function.Predicate;
 
 import com.querydsl.core.types.OrderSpecifier;
 import com.querydsl.core.types.dsl.BooleanExpression;
@@ -28,28 +27,28 @@ import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
 import org.springframework.data.domain.*;
 
-import org.springframework.data.jpa.domain.Specification;
-import team03.monew.dto.comments.CommentCreateRequest;
-import team03.monew.dto.comments.CommentDto;
-import team03.monew.dto.comments.CommentLikeDto;
-import team03.monew.dto.comments.CommentUpdateRequest;
-import team03.monew.dto.common.CursorPageResponse;
-import team03.monew.entity.comments.Comment;
-import team03.monew.entity.comments.CommentLike;
-import team03.monew.entity.article.Article;
+import team03.monew.module.article.dto.CommentCreateRequest;
+import team03.monew.module.article.dto.CommentDto;
+import team03.monew.module.article.dto.CommentLikeDto;
+import team03.monew.module.article.dto.CommentUpdateRequest;
+import team03.monew.module.common.dto.CursorPageResponse;
+import team03.monew.module.comments.entity.Comment;
+import team03.monew.module.comments.entity.CommentLike;
+import team03.monew.module.article.entity.Article;
 import team03.monew.entity.comments.QComment;
-import team03.monew.entity.user.User;
-import team03.monew.entity.user.User.Role;
-import team03.monew.mapper.comments.CommentMapper;
-import team03.monew.repository.article.ArticleRepository;
-import team03.monew.repository.comments.CommentLikeRepository;
-import team03.monew.repository.comments.CommentRepository;
-import team03.monew.repository.user.UserRepository;
-//import team03.monew.util.exception.article.ArticleNotFoundException;
-import team03.monew.util.exception.comments.AlreadyLikedException;
-import team03.monew.util.exception.comments.CommentNotFoundException;
-import team03.monew.util.exception.comments.LikeNotFoundException;
-import team03.monew.util.exception.user.UserNotFoundException;
+import team03.monew.module.user.entity.User;
+import team03.monew.module.user.entity.User.Role;
+import team03.monew.module.comments.mapper.CommentMapper;
+import team03.monew.module.article.repository.ArticleRepository;
+import team03.monew.module.comments.repository.CommentLikeRepository;
+import team03.monew.module.comments.repository.CommentRepository;
+import team03.monew.module.comments.service.CommentServiceImpl;
+import team03.monew.module.user.repository.UserRepository;
+//import team03.monew.module.article.exception.ArticleNotFoundException;
+import team03.monew.module.comments.exception.AlreadyLikedException;
+import team03.monew.module.comments.exception.CommentNotFoundException;
+import team03.monew.module.comments.exception.LikeNotFoundException;
+import team03.monew.module.user.exception.UserNotFoundException;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)

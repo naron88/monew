@@ -19,7 +19,7 @@ import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
-import team03.monew.repository.notification.NotificationRepository;
+import team03.monew.module.notification.repository.NotificationRepository;
 
 @Slf4j
 @Configuration

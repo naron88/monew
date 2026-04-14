@@ -20,13 +20,14 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
-import team03.monew.dto.user.UserDto;
-import team03.monew.dto.user.UserRegisterRequest;
-import team03.monew.dto.user.UserUpdateRequest;
-import team03.monew.entity.user.User.Role;
-import team03.monew.service.user.UserService;
-import team03.monew.util.exception.user.UserAlreadyExistsException;
-import team03.monew.util.exception.user.UserNotFoundException;
+import team03.monew.module.user.controller.UserController;
+import team03.monew.module.user.dto.UserDto;
+import team03.monew.module.user.dto.UserRegisterRequest;
+import team03.monew.module.user.dto.UserUpdateRequest;
+import team03.monew.module.user.entity.User.Role;
+import team03.monew.module.user.service.UserService;
+import team03.monew.module.user.exception.UserAlreadyExistsException;
+import team03.monew.module.user.exception.UserNotFoundException;
 
 @WebMvcTest(UserController.class)
 class UserControllerTest {

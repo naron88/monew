@@ -13,15 +13,15 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import team03.monew.dto.user.UserDto;
-import team03.monew.dto.user.UserLoginRequest;
-import team03.monew.entity.user.User;
-import team03.monew.entity.user.User.Role;
-import team03.monew.mapper.user.UserMapper;
-import team03.monew.repository.user.UserRepository;
-import team03.monew.service.user.impl.AuthServiceImpl;
-import team03.monew.util.exception.user.InvalidException;
-import team03.monew.util.exception.user.UserNotFoundException;
+import team03.monew.module.user.dto.UserDto;
+import team03.monew.module.user.dto.UserLoginRequest;
+import team03.monew.module.user.entity.User;
+import team03.monew.module.user.entity.User.Role;
+import team03.monew.module.user.mapper.UserMapper;
+import team03.monew.module.user.repository.UserRepository;
+import team03.monew.module.user.service.AuthServiceImpl;
+import team03.monew.module.user.exception.InvalidException;
+import team03.monew.module.user.exception.UserNotFoundException;
 
 @ExtendWith(MockitoExtension.class)
 class AuthServiceTest {

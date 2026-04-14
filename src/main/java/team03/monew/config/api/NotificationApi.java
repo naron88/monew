@@ -10,9 +10,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import java.time.Instant;
 import java.util.UUID;
 import org.springframework.http.ResponseEntity;
-import team03.monew.dto.common.CursorPageResponse;
-import team03.monew.dto.notification.NotificationDto;
-import team03.monew.dto.notification.NotificationFindRequest;
+import team03.monew.module.common.dto.CursorPageResponse;
+import team03.monew.module.notification.dto.NotificationDto;
 
 @Tag(name = "알림 관리 API")
 public interface NotificationApi {
